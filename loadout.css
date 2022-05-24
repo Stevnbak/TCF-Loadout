@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+/*Main*/
+body {
+    width: 100%;
+    margin: none;
+    background-image: url('background.jpg');
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+button {
+    background-color: rgb(223, 223, 223);
+    width: 200px;
+    height: 30px;
+}
+
+.loadout {
+    min-width: 84.285vh;
+    min-height: 90%;
+    position: relative;
+}
+.loadout-image {
+    position: absolute;
+    width: 100%;
+}
+.weaponImg {
+    position: absolute;
+    left: 56%;
+    width: 40%;
+    height: auto;
+}
+#Weapon1 {
+    top: 8.5%;
+}
+#Weapon2 {
+    top: 25.25%;
+}
+
+.gearImg {
+    position: absolute;
+    top: 45.2%;
+    width: 14.2%;
+}
+#backpack {
+    left: 52.5%;
+}
+#shield {
+    left: 67.75%;
+}
+#helmet {
+    left: 83.25%;
+}
+
+.items {
+    position: absolute;
+    width: 45%;
+    height: 71%;
+    left: 2.5%;
+    bottom: 2.5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.itemImg {
+    width: 30%;
+    padding: 1.5%;
+}
+
+/* CSS reset*/
+/*prettier-ignore*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
