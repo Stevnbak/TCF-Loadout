@@ -1,9 +1,9 @@
 //Weapons
-let LightWeapons = ['ASP', 'Scrapper', 'PDW', 'Voltaic Brute', 'K-28', 'Scarab'];
-let MediumWeapons = ['Advocate', 'Gorgon', 'KOR-47', 'Manticore', 'AR55', 'Phasic Lancer', 'Guarantee', 'Zeus'];
-let HeavyWeapons = ['Lacerator', 'KBR Longshot', 'Basilisk', 'Bolt Action', 'Kinetic Arbiter', 'KARMA'];
-let ShotgunWeapons = ['Maelstrom', 'Shattergun', 'Trench Gun'];
-let SpecialWeapons = ['KOMRAD'];
+let LightWeapons = ['ASP', 'Scrapper', 'PDW', 'DragonSMG', 'K28', 'Scarab'];
+let MediumWeapons = ['Advocate', 'Gorgon', 'Kor47', 'Manticore', 'AR55', 'PhasicLancer', 'Guarantee', 'ZeusBeam'];
+let HeavyWeapons = ['ShardBurst', 'KBR Longshot', 'Basilisk', 'BoltAction', 'KineticArbiter', 'KARMA-1'];
+let ShotgunWeapons = ['Maelstrom', 'Shattergun', 'Trenchgun'];
+let SpecialWeapons = ['Komrad'];
 
 //Other Arrays
 let Consumables = ['GrenadeFrag', 'GrenadeGas', 'GrenadeSmoke', 'GrenadeSound', 'MedkitCombat', 'MedkitStrong', 'MedkitWeak', 'StimCombat', 'StimStrong', 'StimWeak'];
