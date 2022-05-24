@@ -1,9 +1,52 @@
+/*var itemList = [];
+fetch('./itemList.json')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => (itemList = data));*/
+
 //Weapons
+let allWeapons = [
+    'PDW',
+    'K28',
+    'AR55',
+    'BoltAction',
+    'Trenchgun',
+    'Scrapper',
+    'Scarab',
+    'Manticore',
+    'Bulldog',
+    'Guarantee',
+    'ShardBurst',
+    'Maelstrom',
+    'PhasicLancer',
+    'ASP',
+    'Advocate',
+    'Gorgon',
+    'KBR Longshot',
+    'Shattergun',
+    'DragonSMG',
+    'Kor47',
+    'Basilisk',
+    'KineticArbiter',
+    'Hammer',
+    'ZeusBeam',
+    'KARMA-1',
+    'Komrad',
+];
+//Based on ammo
 let LightWeapons = ['ASP', 'Scrapper', 'PDW', 'DragonSMG', 'K28', 'Scarab'];
-let MediumWeapons = ['Advocate', 'Gorgon', 'Kor47', 'Manticore', 'AR55', 'PhasicLancer', 'Guarantee', 'ZeusBeam'];
+let MediumWeapons = ['Advocate', 'Gorgon', 'Kor47', 'Manticore', 'AR55', 'PhasicLancer', 'Guarantee', 'ZeusBeam', 'Hammer'];
 let HeavyWeapons = ['ShardBurst', 'KBR Longshot', 'Basilisk', 'BoltAction', 'KineticArbiter', 'KARMA-1'];
-let ShotgunWeapons = ['Maelstrom', 'Shattergun', 'Trenchgun'];
+let ShotgunWeapons = ['Maelstrom', 'Shattergun', 'Trenchgun', 'Bulldog'];
 let SpecialWeapons = ['Komrad'];
+//Based on rarity
+let commonWeapons = ['PDW', 'K28', 'AR55', 'BoltAction', 'Trenchgun'];
+let uncommonWeapons = ['Scrapper', 'Scarab', 'Manticore', 'Bulldog'];
+let rareWeapons = ['Guarantee', 'ShardBurst', 'Maelstrom', 'PhasicLancer'];
+let epicWeapons = ['ASP', 'Advocate', 'Gorgon', 'KBR Longshot', 'Shattergun'];
+let exoticWeapons = ['DragonSMG', 'Kor47', 'Basilisk', 'KineticArbiter', 'Hammer'];
+let legendaryWeapons = ['ZeusBeam', 'KARMA-1', 'Komrad'];
 
 //Other Arrays
 let Consumables = ['GrenadeFrag', 'GrenadeGas', 'GrenadeSmoke', 'GrenadeSound', 'MedkitCombat', 'MedkitStrong', 'MedkitWeak', 'StimCombat', 'StimStrong', 'StimWeak'];
@@ -11,132 +54,119 @@ let Backpacks = ['Common', 'Uncommon', 'Rare', 'Epic'];
 let Shields = ['Common', 'Common_Tactical', 'Common_Restoration', 'Uncommon', 'Uncommon_Tactical', 'Uncommon_Restoration', 'Rare', 'Rare_Tactical', 'Rare_Restoration', 'Epic', 'Exotic'];
 let Helmets = ['Common', 'Common_Tactical', 'Common_Restoration', 'Uncommon', 'Uncommon_Tactical', 'Uncommon_Restoration', 'Rare', 'Rare_Tactical', 'Rare_Restoration', 'Epic', 'Exotic', 'NightVision'];
 
-function Generate() {
-    let Weapon1;
-    let Weapon2;
-    let Consumable1;
-    let Consumable2;
-    let Backpack;
-    let Shield;
-    let Helmet;
-    let Ammo1;
-    let Ammo2;
-    let Consumable1Number;
-    let Consumable2Number;
-    let Ammo1Number;
-    let Ammo2Number;
+function onLoad() {
+    RandomLoadout();
+}
 
+function RandomLoadout() {
+    resetLoadout();
+    let itemNumber = 1;
     let r;
-    let LW = [...LightWeapons];
-    let MW = [...MediumWeapons];
-    let HW = [...HeavyWeapons];
-    let ShotW = [...ShotgunWeapons];
-    let SpecialW = [...SpecialWeapons];
-    let C = [...Consumables];
-    let B = [...Backpacks];
-    let S = [...Shields];
-    let H = [...Helmets];
 
     //Weapons
-    r = Math.floor(Math.random() * (LW.length + MW.length + HW.length + ShotW.length + SpecialW.length));
-    if (r < LW.length) {
-        Weapon1 = LW[Math.floor(Math.random() * LW.length)];
-        delete LW[LW.indexOf(Weapon1)];
-        Ammo1 = 'Light';
-    } else if (r < LW.length + MW.length) {
-        Weapon1 = MW[Math.floor(Math.random() * MW.length)];
-        delete MW[MW.indexOf(Weapon1)];
-        Ammo1 = 'Medium';
-    } else if (r < LW.length + MW.length + HW.length) {
-        Weapon1 = HW[Math.floor(Math.random() * HW.length)];
-        delete HW[HW.indexOf(Weapon1)];
-        Ammo1 = 'Heavy';
-    } else if (r < LW.length + MW.length + HW.length + ShotW.length) {
-        Weapon1 = ShotW[Math.floor(Math.random() * ShotW.length)];
-        delete ShotW[ShotW.indexOf(Weapon1)];
-        Ammo1 = 'Shotgun';
-    } else if (r < LW.length + MW.length + HW.length + ShotW.length + SpecialW.length) {
-        Weapon1 = SpecialW[Math.floor(Math.random() * SpecialW.length)];
-        delete SpecialW[SpecialW.indexOf(Weapon1)];
-        Ammo1 = 'Special';
-    }
-    r = Math.floor(Math.random() * (LW.length + MW.length + HW.length + ShotW.length + SpecialW.length));
-    if (r < LW.length) {
-        Weapon2 = LW[Math.floor(Math.random() * LW.length)];
-        Ammo2 = 'Light';
-    } else if (r < LW.length + MW.length) {
-        Weapon2 = MW[Math.floor(Math.random() * MW.length)];
-        Ammo2 = 'Medium';
-    } else if (r < LW.length + MW.length + HW.length) {
-        Weapon2 = HW[Math.floor(Math.random() * HW.length)];
-        Ammo2 = 'Heavy';
-    } else if (r < LW.length + MW.length + HW.length + ShotW.length) {
-        Weapon2 = ShotW[Math.floor(Math.random() * ShotW.length)];
-        Ammo2 = 'Shotgun';
-    } else if (r < LW.length + MW.length + HW.length + ShotW.length + SpecialW.length) {
-        Weapon2 = SpecialW[Math.floor(Math.random() * SpecialW.length)];
-        Ammo2 = 'Special';
+    let Weapon;
+    let Rarity;
+    let Ammo;
+    let AmmoNumber;
+    let tempWeaponArr = [...allWeapons];
+    //Weapon 1
+    Weapon = tempWeaponArr[Math.floor(Math.random() * tempWeaponArr.length)];
+    delete tempWeaponArr[tempWeaponArr.indexOf(Weapon)];
+    if (LightWeapons.includes(Weapon)) Ammo = 'Light';
+    else if (MediumWeapons.includes(Weapon)) Ammo = 'Medium';
+    else if (HeavyWeapons.includes(Weapon)) Ammo = 'Heavy';
+    else if (ShotgunWeapons.includes(Weapon)) Ammo = 'Shotgun';
+    else if (SpecialWeapons.includes(Weapon)) Ammo = 'Special';
+    if (Ammo == 'Light' || Ammo == 'Medium') AmmoNumber = Math.floor(Math.random() * 249) + 1;
+    if (Ammo == 'Shotgun' || Ammo == 'Heavy' || Ammo == 'Special') AmmoNumber = Math.floor(Math.random() * 49) + 1;
+    if (commonWeapons.includes(Weapon)) Rarity = 'Common';
+    else if (uncommonWeapons.includes(Weapon)) Rarity = 'Uncommon';
+    else if (rareWeapons.includes(Weapon)) Rarity = 'Rare';
+    else if (epicWeapons.includes(Weapon)) Rarity = 'Epic';
+    else if (exoticWeapons.includes(Weapon)) Rarity = 'Exotic';
+    else if (legendaryWeapons.includes(Weapon)) Rarity = 'Legendary';
+    document.getElementById('Weapon1').src = 'Images/Weapons/' + Weapon + '.png';
+    document.getElementById(`Item${itemNumber}`).src = 'Images/Ammo_' + Ammo + '.png';
+    document.getElementById(`Item${itemNumber}Number`).innerText = AmmoNumber;
+    itemNumber += 1;
+    //Weapon 2
+    Weapon = '';
+    Ammo = '';
+    AmmoNumber = 0;
+    Weapon = tempWeaponArr[Math.floor(Math.random() * tempWeaponArr.length)];
+    delete tempWeaponArr[tempWeaponArr.indexOf(Weapon)];
+    if (LightWeapons.includes(Weapon)) Ammo = 'Light';
+    else if (MediumWeapons.includes(Weapon)) Ammo = 'Medium';
+    else if (HeavyWeapons.includes(Weapon)) Ammo = 'Heavy';
+    else if (ShotgunWeapons.includes(Weapon)) Ammo = 'Shotgun';
+    else if (SpecialWeapons.includes(Weapon)) Ammo = 'Special';
+    if (Ammo == 'Light' || Ammo == 'Medium') AmmoNumber = Math.floor(Math.random() * 249) + 1;
+    if (Ammo == 'Shotgun' || Ammo == 'Heavy' || Ammo == 'Special') AmmoNumber = Math.floor(Math.random() * 49) + 1;
+    if (commonWeapons.includes(Weapon)) Rarity = 'Common';
+    else if (uncommonWeapons.includes(Weapon)) Rarity = 'Uncommon';
+    else if (rareWeapons.includes(Weapon)) Rarity = 'Rare';
+    else if (epicWeapons.includes(Weapon)) Rarity = 'Epic';
+    else if (exoticWeapons.includes(Weapon)) Rarity = 'Exotic';
+    else if (legendaryWeapons.includes(Weapon)) Rarity = 'Legendary';
+    if (Weapon != undefined) {
+        document.getElementById('Weapon2').src = 'Images/Weapons/' + Weapon + '.png';
+        document.getElementById(`Item${itemNumber}`).src = 'Images/Ammo_' + Ammo + '.png';
+        document.getElementById(`Item${itemNumber}Number`).innerText = AmmoNumber;
+        itemNumber += 1;
     }
 
     //Backpack
+    let B = [...Backpacks];
+    let Backpack;
     r = Math.floor(Math.random() * B.length);
     Backpack = B[r];
-
-    //Consumables:
-    if (Math.floor(Math.random() * 10) != 0) {
-        r = Math.floor(Math.random() * C.length);
-        Consumable1 = C[r];
-        C.splice(r, 1);
-    }
-    if (Math.floor(Math.random() * 10) != 0) {
-        r = Math.floor(Math.random() * C.length);
-        Consumable2 = C[r];
-    }
+    if (Backpack) document.getElementById('Backpack').src = 'Images/Backpack_' + Backpack + '.png';
 
     //Shield
+    let S = [...Shields];
+    let Shield;
     if (Math.floor(Math.random() * 7) != 0) {
         r = Math.floor(Math.random() * S.length);
         Shield = S[r];
     }
+    if (Shield) document.getElementById('Shield').src = 'Images/Shield_' + Shield + '.png';
 
     //Helmet
+    let H = [...Helmets];
+    let Helmet;
     if (Math.floor(Math.random() * 5) != 0) {
         r = Math.floor(Math.random() * H.length);
         Helmet = H[r];
     }
-
-    //Numbers
-    if (Consumable1) {
-        if (Consumable1.includes('Medkit')) Consumable1Number = Math.floor(Math.random() * 1) + 1;
-        if (Consumable1.includes('Stim')) Consumable1Number = Math.floor(Math.random() * 4) + 1;
-        if (Consumable1.includes('Grenade')) Consumable1Number = Math.floor(Math.random() * 3) + 1;
-    }
-    if (Consumable2) {
-        if (Consumable2.includes('Medkit')) Consumable2Number = Math.floor(Math.random() * 1) + 1;
-        if (Consumable2.includes('Stim')) Consumable2Number = Math.floor(Math.random() * 4) + 1;
-        if (Consumable2.includes('Grenade')) Consumable2Number = Math.floor(Math.random() * 3) + 1;
-    }
-    if (Ammo1) {
-        if (Ammo1 == 'Light' || Ammo1 == 'Medium') Ammo1Number = Math.floor(Math.random() * 249) + 1;
-        if (Ammo1 == 'Shotgun' || Ammo1 == 'Heavy' || Ammo1 == 'Special') Ammo1Number = Math.floor(Math.random() * 49) + 1;
-    }
-    if (Ammo2) {
-        if (Ammo2 == 'Light' || Ammo2 == 'Medium') Ammo2Number = Math.floor(Math.random() * 250);
-        if (Ammo2 == 'Shotgun' || Ammo2 == 'Heavy' || Ammo2 == 'Special') Ammo2Number = Math.floor(Math.random() * 49) + 1;
-    }
-
-    //Set pictures on html page:
-    document.getElementById('Weapon1').src = 'Images/Weapons/' + Weapon1 + '.png';
-    if (Weapon2) document.getElementById('Weapon2').src = 'Images/Weapons/' + Weapon2 + '.png';
-    else document.getElementById('Weapon2').src = 'Images/None.png';
-    if (Backpack) document.getElementById('Backpack').src = 'Images/Backpack_' + Backpack + '.png';
-    else document.getElementById('Backpack').src = 'Images/None.png';
-    if (Shield) document.getElementById('Shield').src = 'Images/Shield_' + Shield + '.png';
-    else document.getElementById('Shield').src = 'Images/None.png';
     if (Helmet) document.getElementById('Helmet').src = 'Images/Helmet_' + Helmet + '.png';
-    else document.getElementById('Helmet').src = 'Images/None.png';
 
-    //Items:
+    //Consumables:
+    let C = [...Consumables];
+    for (let i = 1; i <= 2; i++) {
+        let Consumable;
+        let ConsumableNumber;
+        if (Math.floor(Math.random() * 10) != 0) {
+            r = Math.floor(Math.random() * C.length);
+            Consumable = C[r];
+            C.splice(r, 1);
+        }
+        if (Consumable) {
+            if (Consumable.includes('Medkit')) ConsumableNumber = Math.floor(Math.random() * 1) + 1;
+            if (Consumable.includes('Stim')) ConsumableNumber = Math.floor(Math.random() * 4) + 1;
+            if (Consumable.includes('Grenade')) ConsumableNumber = Math.floor(Math.random() * 3) + 1;
+            document.getElementById(`Item${itemNumber}`).src = 'Images/' + Consumable + '.png';
+            document.getElementById(`Item${itemNumber}Number`).innerText = ConsumableNumber;
+            itemNumber += 1;
+        }
+    }
+}
+
+function resetLoadout() {
+    document.getElementById('Helmet').src = 'Images/None.png';
+    document.getElementById('Shield').src = 'Images/None.png';
+    document.getElementById('Backpack').src = 'Images/None.png';
+    document.getElementById('Weapon1').src = 'Images/None.png';
+    document.getElementById('Weapon2').src = 'Images/None.png';
     document.getElementById(`Item1`).src = 'Images/None.png';
     document.getElementById(`Item2`).src = 'Images/None.png';
     document.getElementById(`Item3`).src = 'Images/None.png';
@@ -145,23 +175,4 @@ function Generate() {
     document.getElementById(`Item2Number`).innerText = '';
     document.getElementById(`Item3Number`).innerText = '';
     document.getElementById(`Item4Number`).innerText = '';
-    let n = 1;
-    if (Consumable1) {
-        document.getElementById(`Item${n}`).src = 'Images/' + Consumable1 + '.png';
-        document.getElementById(`Item${n}Number`).innerText = Consumable1Number;
-        n += 1;
-    }
-    if (Consumable2) {
-        document.getElementById(`Item${n}`).src = 'Images/' + Consumable2 + '.png';
-        document.getElementById(`Item${n}Number`).innerText = Consumable2Number;
-        n += 1;
-    }
-    document.getElementById(`Item${n}`).src = 'Images/Ammo_' + Ammo1 + '.png';
-    document.getElementById(`Item${n}Number`).innerText = Ammo1Number;
-    n += 1;
-    if (Ammo2) {
-        document.getElementById(`Item${n}`).src = 'Images/Ammo_' + Ammo2 + '.png';
-        document.getElementById(`Item${n}Number`).innerText = Ammo2Number;
-        n += 1;
-    }
 }

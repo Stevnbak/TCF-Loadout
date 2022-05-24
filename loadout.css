@@ -15,21 +15,31 @@ body {
 .title {
     width: 100%;
     text-align: center;
-    font-size: 40px;
+    font-size: 2vw;
     font-weight: bold;
     color: #ffffff;
     font-family: 'Lato', sans-serif;
 }
 
 button {
-    width: 15%;
+    width: 15vw;
     height: 5%;
-    background-color: #66c6f7;
+    background-color: #2faae7;
     border-radius: 0.3em;
     margin: 10px 0;
     text-transform: uppercase;
-    font-size: 1.2em;
+    font-size: 1vw;
     font-family: 'Noto Sans', sans-serif;
+}
+
+button:hover {
+    background-color: #1a7eb1;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #0c6794;
+    font-size: 1.01vw;
 }
 
 .loadout {
