@@ -8,8 +8,8 @@ let SpecialWeapons = ['KOMRAD'];
 //Other Arrays
 let Consumables = ['GrenadeFrag', 'GrenadeGas', 'GrenadeSmoke', 'GrenadeSound', 'MedkitCombat', 'MedkitStrong', 'MedkitWeak', 'StimCombat', 'StimStrong', 'StimWeak'];
 let Backpacks = ['Common', 'Uncommon', 'Rare', 'Epic'];
-let Shields = ['Common', 'Common_Tactical', 'Uncommon', 'Uncommon_Tactical', 'Uncommon_Restoration', 'Rare', 'Rare_Tactical', 'Rare_Restoration', 'Epic', 'Exotic'];
-let Helmets = ['Common', 'Common_Tactical', 'Uncommon', 'Uncommon_Tactical', 'Uncommon_Restoration', 'Rare', 'Rare_Tactical', 'Rare_Restoration', 'Epic', 'Exotic', 'NightVision'];
+let Shields = ['Common', 'Common_Tactical', 'Common_Restoration', 'Uncommon', 'Uncommon_Tactical', 'Uncommon_Restoration', 'Rare', 'Rare_Tactical', 'Rare_Restoration', 'Epic', 'Exotic'];
+let Helmets = ['Common', 'Common_Tactical', 'Common_Restoration', 'Uncommon', 'Uncommon_Tactical', 'Uncommon_Restoration', 'Rare', 'Rare_Tactical', 'Rare_Restoration', 'Epic', 'Exotic', 'NightVision'];
 
 function Generate() {
     let Weapon1;
@@ -141,27 +141,27 @@ function Generate() {
     document.getElementById(`Item2`).src = 'Images/None.png';
     document.getElementById(`Item3`).src = 'Images/None.png';
     document.getElementById(`Item4`).src = 'Images/None.png';
-    document.getElementById(`Item1`).innerText = '';
-    document.getElementById(`Item2`).innerText = '';
-    document.getElementById(`Item3`).innerText = '';
-    document.getElementById(`Item4`).innerText = '';
+    document.getElementById(`Item1Number`).innerText = '';
+    document.getElementById(`Item2Number`).innerText = '';
+    document.getElementById(`Item3Number`).innerText = '';
+    document.getElementById(`Item4Number`).innerText = '';
     let n = 1;
     if (Consumable1) {
         document.getElementById(`Item${n}`).src = 'Images/' + Consumable1 + '.png';
-        document.getElementById(`Item${n}`).innerText = Consumable1Number;
+        document.getElementById(`Item${n}Number`).innerText = Consumable1Number;
         n += 1;
     }
     if (Consumable2) {
         document.getElementById(`Item${n}`).src = 'Images/' + Consumable2 + '.png';
-        document.getElementById(`Item${n}`).innerText = Consumable2Number;
+        document.getElementById(`Item${n}Number`).innerText = Consumable2Number;
         n += 1;
     }
     document.getElementById(`Item${n}`).src = 'Images/Ammo_' + Ammo1 + '.png';
-    document.getElementById(`Item${n}`).innerText = Ammo1Number;
+    document.getElementById(`Item${n}Number`).innerText = Ammo1Number;
     n += 1;
     if (Ammo2) {
         document.getElementById(`Item${n}`).src = 'Images/Ammo_' + Ammo2 + '.png';
-        document.getElementById(`Item${n}`).innerText = Ammo2Number;
+        document.getElementById(`Item${n}Number`).innerText = Ammo2Number;
         n += 1;
     }
 }
