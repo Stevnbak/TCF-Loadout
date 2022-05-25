@@ -55,6 +55,7 @@ let Shields = ['Common', 'Common_Tactical', 'Common_Restoration', 'Uncommon', 'U
 let Helmets = ['Common', 'Common_Tactical', 'Common_Restoration', 'Uncommon', 'Uncommon_Tactical', 'Uncommon_Restoration', 'Rare', 'Rare_Tactical', 'Rare_Restoration', 'Epic', 'Exotic', 'NightVision'];
 
 function onLoad() {
+    resetLoadout();
     RandomLoadout();
 }
 

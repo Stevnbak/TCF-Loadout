@@ -4,8 +4,8 @@
 body {
     width: 100%;
     margin: none;
-    background-image: url('background.jpg');
-    background-attachment: fixed;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
