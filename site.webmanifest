@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "TCF Loadout Generator",
+    "short_name": "Loadout",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
