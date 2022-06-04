@@ -309,6 +309,9 @@ footer {
 .footer-backToTopText:hover {
     background-color: var(--clr-primary-2);
 }
+.footer-backToTopLink a {
+    text-decoration: none;
+}
 #top {
     height: 0;
 }
