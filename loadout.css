@@ -21,12 +21,22 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.buttons {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
 button {
     width: 15vw;
-    height: 5%;
+    height: 100%;
     background-color: #2faae7;
     border-radius: 0.3em;
-    margin: 10px 0;
+    margin: 10px;
     text-transform: uppercase;
     font-size: 1vw;
     font-family: 'Noto Sans', sans-serif;
@@ -43,8 +53,8 @@ button:active {
 }
 
 .loadout {
-    min-width: 84.285vh;
-    min-height: 90%;
+    min-width: 82.25vh;
+    min-height: 87.5vh;
     position: relative;
 }
 .loadout-image {
@@ -112,6 +122,57 @@ button:active {
     font-family: 'Noto Sans', sans-serif;
     color: white;
     font-size: 1.5vh;
+}
+
+/*Copy popup*/
+.popup {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    width: 15vw;
+    text-align: center;
+    padding: 0.5em;
+    top: 2%;
+    left: 41.5vw;
+    background-color: #176e99;
+    border-radius: 0.3em;
+    margin: 10px;
+    text-transform: uppercase;
+    font-size: 1vw;
+    font-family: 'Noto Sans', sans-serif;
+}
+.show {
+    visibility: visible;
+    animation: fade 2s;
+    -webkit-animation: fade 2s;
+}
+@-webkit-keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* CSS reset*/
