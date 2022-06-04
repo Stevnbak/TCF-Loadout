@@ -101,9 +101,9 @@ function ShareLoadout(clipboard = false) {
     let backpack = document.getElementById('Backpack').getAttribute('src').replace('Images/', '').replace('Backpack_', '').replace('.png', '');
     if (backpack != 'None') shareString += '&backpack=' + backpack;
     if (clipboard) {
+        navigator.clipboard.writeText(document.baseURI + shareString);
         let popup = document.getElementById('sharePopup');
         window.history.replaceState({}, document.title, '/' + shareString);
-        navigator.clipboard.writeText(document.baseURI + shareString);
         popup.classList.add('show');
         delay(2000).then(() => popup.classList.remove('show'));
     } else {
