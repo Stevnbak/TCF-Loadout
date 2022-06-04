@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
 /*Main*/
-body {
+.page {
     width: 100%;
     margin: none;
     background: url('background.jpg') no-repeat center center fixed;
@@ -31,7 +31,7 @@ body {
     margin: 10px;
 }
 
-button {
+.loadoutBtn {
     width: 15vw;
     height: 100%;
     background-color: #2faae7;
@@ -42,24 +42,24 @@ button {
     font-family: 'Noto Sans', sans-serif;
 }
 
-button:hover {
+.loadoutBtn:hover {
     background-color: #1a7eb1;
     cursor: pointer;
 }
 
-button:active {
+.loadoutBtn:active {
     background-color: #0c6794;
     font-size: 1.01vw;
 }
 
 .loadout {
-    min-width: 82.25vh;
-    min-height: 87.5vh;
+    max-width: 100%;
+    margin-bottom: 5vh;
     position: relative;
 }
 .loadout-image {
-    position: absolute;
-    width: 100%;
+    width: auto;
+    height: 87.5vh;
 }
 .weaponImg {
     position: absolute;
@@ -68,10 +68,10 @@ button:active {
     height: auto;
 }
 #Weapon1 {
-    top: 8.5%;
+    top: 8.75%;
 }
 #Weapon2 {
-    top: 25.25%;
+    top: 25.5%;
 }
 
 .gearImg {
@@ -173,15 +173,4 @@ button:active {
     100% {
         opacity: 0;
     }
-}
-
-/* CSS reset*/
-/*prettier-ignore*/
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
 }
